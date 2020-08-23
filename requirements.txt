@@ -2,3 +2,7 @@ pyjwt
 flask
 gunicorn
 pytest
+pyOpenSSL
+cryptography
+idna
+certifi
