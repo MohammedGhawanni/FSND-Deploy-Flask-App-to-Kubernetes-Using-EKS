@@ -1,5 +1,5 @@
 # Get base image
-FROM python:stretch
+FROM python:3.7-stretch
 
 # Set working directory inside the base image
 WORKDIR /usr/app
