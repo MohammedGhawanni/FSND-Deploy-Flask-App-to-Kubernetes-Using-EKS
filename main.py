@@ -6,6 +6,9 @@ import logging
 import datetime
 import functools
 import jwt
+import certifi
+import urllib3
+import urllib3.contrib.pyopenssl
 
 # pylint: disable=import-error
 from flask import Flask, jsonify, request, abort
@@ -14,6 +17,11 @@ from flask import Flask, jsonify, request, abort
 JWT_SECRET = os.environ.get('JWT_SECRET', 'abc123abc1234')
 LOG_LEVEL = os.environ.get('LOG_LEVEL', 'INFO')
 
+urllib3.contrib.pyopenssl.inject_into_urllib3()
+logging.getLogger("urllib3").setLevel(logging.WARNING)
+http = urllib3.PoolManager(
+cert_reqs='CERT_REQUIRED',
+ca_certs=certifi.where())
 
 def _logger():
     '''

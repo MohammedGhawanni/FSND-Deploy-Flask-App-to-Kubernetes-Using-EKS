@@ -2,7 +2,4 @@ pyjwt
 flask
 gunicorn
 pytest
-pyOpenSSL
-cryptography
-idna
-certifi
+urllib3[secure]
