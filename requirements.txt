@@ -3,3 +3,4 @@ flask
 gunicorn
 pytest
 urllib3[secure]
+python-dotenv
